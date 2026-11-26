@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#080B11" />
+  <title>FUTVault | Zero-KYC TON Gaming Escrow &amp; Free FC 27 SBC Tools</title>
+  <meta name="description" content="FUTVault is a Zero-KYC, non-custodial Telegram Mini-App built on TON (The Open Network) for EA Sports FC 27 passwordless Open Bid escrow, private P2P middleman links, and free SBC Solver &amp; Market Crash Radar utilities." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="FUTVault — Zero-KYC TON Gaming Escrow &amp; FC 27 Utilities" />
+  <meta property="og:description" content="Non-custodial TON USDT Jetton gaming escrow, passwordless Open Bid transfers, private /p2p links, and free FC 27 SBC Solver &amp; Market Crash Radar inside Telegram." />
+  <meta property="og:url" content="https://futvault.filmroya.top/" />
+  <meta property="og:image" content="https://futvault.filmroya.top/assets/futvault-banner.png" />
+  <link rel="icon" type="image/svg+xml" href="/assets/futvault-avatar.svg" />
+  <link rel="apple-touch-icon" href="/assets/futvault-avatar.png" />
+  <style>
+    :root {
+      --bg-canvas: #080B11;
+      --bg-card: #0F1520;
+      --bg-elevated: #151E2E;
+      --border-subtle: rgba(148, 163, 184, 0.18);
+      --border-emerald: rgba(16, 185, 129, 0.42);
+      --border-ton: rgba(56, 189, 248, 0.42);
+      --text-primary: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --accent-emerald: #10B981;
+      --accent-ton: #38BDF8;
+      --accent-gold: #F59E0B;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background: radial-gradient(circle at 18% 0%, rgba(56, 189, 248, 0.12), transparent 42%),
+                  radial-gradient(circle at 85% 10%, rgba(16, 185, 129, 0.10), transparent 38%),
+                  var(--bg-canvas);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(8, 11, 17, 0.82);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+    .brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--border-emerald);
+    }
+    .brand-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-ton);
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid var(--border-ton);
+      padding: 2px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: 11px;
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid transparent;
+      transition: transform 0.14s ease, opacity 0.14s ease, border-color 0.14s ease;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-1px); opacity: 0.95; }
+    .btn-primary {
+      background: linear-gradient(135deg, #10B981, #059669);
+      color: #03150E;
+      box-shadow: 0 10px 26px rgba(16, 185, 129, 0.25);
+    }
+    .btn-ton {
+      background: rgba(56, 189, 248, 0.12);
+      color: #BAE6FD;
+      border-color: var(--border-ton);
+    }
+    .btn-ghost {
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      border-color: var(--border-subtle);
+    }
+    .hero {
+      padding: 64px 0 42px;
+      text-align: center;
+    }
+    .pill-row {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .pill {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+    }
+    .pill.ton { color: #7DD3FC; border-color: var(--border-ton); background: rgba(56, 189, 248, 0.09); }
+    .pill.emerald { color: #6EE7B7; border-color: var(--border-emerald); background: rgba(16, 185, 129, 0.09); }
+    h1 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      max-width: 820px;
+      margin: 0 auto 18px;
+      font-weight: 900;
+    }
+    .hero-lead {
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--text-secondary);
+      max-width: 720px;
+      margin: 0 auto 28px;
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 34px;
+    }
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .stat-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: left;
+    }
+    .stat-label { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
+    .stat-value { font-size: 16px; font-weight: 800; color: var(--text-primary); font-variant-numeric: tabular-nums; }
+    section { padding: 34px 0; }
+    .section-title {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      color: var(--text-secondary);
+      font-size: 14.5px;
+      margin-bottom: 22px;
+      max-width: 720px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 16px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .card.ton-highlight {
+      border-color: var(--border-ton);
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.08) 0%, var(--bg-card) 65%);
+    }
+    .card.emerald-highlight {
+      border-color: var(--border-emerald);
+      background: linear-gradient(180deg, rgba(16, 185, 129, 0.08) 0%, var(--bg-card) 65%);
+    }
+    .card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+    .mono-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(148, 163, 184, 0.12);
+      color: #E2E8F0;
+      width: fit-content;
+    }
+    .clean-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+    .clean-list li::before {
+      content: "✓ ";
+      color: var(--accent-emerald);
+      font-weight: 800;
+    }
+    .cta-panel {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(56, 189, 248, 0.12));
+      border: 1px solid var(--border-emerald);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .disclaimer-box {
+      background: rgba(245, 158, 11, 0.07);
+      border: 1px solid rgba(245, 158, 11, 0.30);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      font-size: 12.5px;
+      color: #FDE68A;
+      line-height: 1.65;
+    }
+    footer {
+      margin-top: 32px;
+      border-top: 1px solid var(--border-subtle);
+      padding: 28px 0 42px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .footer-links a:hover { color: var(--text-primary); }
+    @media (max-width: 640px) {
+      .hero { padding: 42px 0 28px; }
+      .nav-links { width: 100%; justify-content: space-between; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <img src="/assets/futvault-avatar.svg" alt="FUTVault Logo" width="38" height="38" />
+        <span>FUTVault</span>
+        <span class="brand-tag">TON Mini-App</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#ton-ecosystem">TON &amp; Crypto</a>
+        <a href="#utilities">Free Tools</a>
+        <a href="#escrow">Anti-Fraud Escrow</a>
+        <a href="/terms/">Terms</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="https://t.me/FUTVaultExchangeBot" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Telegram</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="pill-row">
+        <span class="pill ton">Built on TON (The Open Network)</span>
+        <span class="pill emerald">100% Zero-KYC &amp; Non-Custodial</span>
+        <span class="pill">Trilingual: EN &bull; FA &bull; AR</span>
+      </div>
+      <h1>Zero-KYC TON Gaming Escrow &amp; Free EA Sports FC 27 Market Utilities</h1>
+      <p class="hero-lead">
+        FUTVault is a Telegram-native Mini-App and Bot built on <strong>TON (The Open Network)</strong> for passwordless Open Bid gaming asset escrow, private P2P middleman invites, and free real-time FC 27 SBC &amp; Market Crash utilities &mdash; with zero account logins and zero KYC documents.
+      </p>
+      <div class="hero-actions">
+        <a href="https://t.me/FUTVaultExchangeBot" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Launch @FUTVaultExchangeBot</a>
+        <a href="https://t.me/FUTVaultExchangeBot?start=sbc_86" class="btn btn-ton" target="_blank" rel="noopener noreferrer">Try Free /sbc Solver</a>
+        <a href="https://t.me/FUTVaultExchangeBot?start=p2p" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Create Private /p2p Escrow</a>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-box">
+          <div class="stat-label">Primary Blockchain Rail</div>
+          <div class="stat-value">TON (USDT Jetton + Memo)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Transfer Method</div>
+          <div class="stat-value">Passwordless Open Bid</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Identity &amp; Custody</div>
+          <div class="stat-value">Zero-KYC / Watch-Only Cold</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Supported Networks</div>
+          <div class="stat-value">TON &bull; BEP20 &bull; TRC20</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ton-ecosystem">
+      <h2 class="section-title">Native TON Blockchain Integration</h2>
+      <p class="section-sub">
+        Designed from day one for the Telegram &amp; TON ecosystem so gamers can verify settlements on-chain without custodial freezes or bank chargebacks.
+      </p>
+      <div class="grid-2">
+        <div class="card ton-highlight">
+          <span class="mono-badge">TON USDT Jetton &bull; ~$0.05 Fee</span>
+          <h3>Direct Non-Custodial TON Deposits</h3>
+          <p>
+            Pay-in invoices settle directly to offline cold wallets via TON USDT Jetton with deterministic <code style="font-family:var(--font-mono);color:#BAE6FD;">FV-</code> memo tagging and live RPC verification. Low $0.50 minimum order threshold lets skeptical new users test trust with micro-tranches before committing larger volume.
+          </p>
+          <ul class="clean-list">
+            <li>Zero cold-wallet private keys stored on the application server</li>
+            <li>On-chain finality checks across TON, USDT BEP20, and USDT TRC20</li>
+            <li>24-hour fulfillment SLA with automatic refund minus network gas fee</li>
+          </ul>
+        </div>
+
+        <div class="card emerald-highlight">
+          <span class="mono-badge">7-Layer Anti-Fraud Shield</span>
+          <h3>Passwordless Open Bid &amp; Blind Fingerprints</h3>
+          <p>
+            Buyers never share EA email, password, or backup codes. Orders decompose into safe split-batch micro-tranches (&le; 250K coins) with 100% coverage of the 5% Transfer Market tax and unique blind card watermarks.
+          </p>
+          <ul class="clean-list">
+            <li>Zero account credentials shared for Open Bid transfers</li>
+            <li>Requires &ge; 10,000 liquid in-club coins to list the starter card</li>
+            <li>5-second Won Items <code style="font-family:var(--font-mono);color:#A7F3D0;">FV-XXXX</code> video proof &amp; rolling security bonds</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="utilities">
+      <h2 class="section-title">Free Telegram Utilities &amp; P2P Escrow</h2>
+      <p class="section-sub">
+        Every utility runs natively inside <a href="https://t.me/FUTVaultExchangeBot" style="color:#7DD3FC;text-decoration:underline;" target="_blank" rel="noopener noreferrer">@FUTVaultExchangeBot</a> in English, Persian, and Arabic &mdash; no registration required.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <span class="mono-badge">/sbc</span>
+          <h3>Cheapest 11-Player SBC Solver</h3>
+          <p>
+            Instantly computes the lowest-cost 11-player rating breakdown for 83&ndash;90 OVR Squad Building Challenges so players stop overpaying for fodder.
+          </p>
+          <a href="https://t.me/FUTVaultExchangeBot?start=sbc_86" class="btn btn-ghost" style="margin-top:auto;" target="_blank" rel="noopener noreferrer">Open SBC Solver</a>
+        </div>
+
+        <div class="card">
+          <span class="mono-badge">/radar</span>
+          <h3>Live Market Crash &amp; Fodder Radar</h3>
+          <p>
+            Tracks pre-promo panic windows, fodder spikes, and crash signals ahead of major EA Sports FC 27 events with actionable buy/hold alerts.
+          </p>
+          <a href="https://t.me/FUTVaultExchangeBot?start=radar" class="btn btn-ghost" style="margin-top:auto;" target="_blank" rel="noopener noreferrer">Open Crash Radar</a>
+        </div>
+
+        <div class="card">
+          <span class="mono-badge">/p2p</span>
+          <h3>Private Off-Orderbook P2P Escrow</h3>
+          <p>
+            Already have a buyer or seller? Spin up a 60-minute private crypto escrow invite link hidden from public orderbooks with custom agreed pricing.
+          </p>
+          <a href="https://t.me/FUTVaultExchangeBot?start=p2p" class="btn btn-ghost" style="margin-top:auto;" target="_blank" rel="noopener noreferrer">Launch Private P2P</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="escrow">
+      <h2 class="section-title">For Coin Suppliers &amp; Channel Partners</h2>
+      <p class="section-sub">
+        Just-In-Time (JIT) liquidity matching for independent coin suppliers and zero-code Telegram channel monetization.
+      </p>
+      <div class="grid-2">
+        <div class="card">
+          <span class="mono-badge">/sell &bull; Custom Limit Orderbook</span>
+          <h3>JIT Coin Suppliers &amp; Farmers</h3>
+          <p>
+            Set your own USDT ask rate per 100K coins (lowest ask matches first), claim buyer-funded escrow tickets with a 20-minute exclusive lock (+10-minute grace window), and settle in USDT via TON, BEP20, or TRC20 after verified delivery and payout maturity holds.
+          </p>
+          <a href="https://t.me/FUTVaultExchange" class="btn btn-ghost" style="margin-top:auto;" target="_blank" rel="noopener noreferrer">View @FUTVaultExchange Channel</a>
+        </div>
+
+        <div class="card">
+          <span class="mono-badge">@FUTVaultExchangeB2BBot</span>
+          <h3>Zero-Code B2B Channel Partners</h3>
+          <p>
+            Telegram channel admins, Discord community owners, and trading creators register in 60 seconds via the dedicated Partner Bot to get tracked referral links, sticky repeat-order attribution, customizable member discounts, and USDT payouts.
+          </p>
+          <a href="https://t.me/FUTVaultExchangeB2BBot" class="btn btn-ton" style="margin-top:auto;" target="_blank" rel="noopener noreferrer">Open Partner Bot</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="cta-panel">
+        <div>
+          <h2 class="section-title" style="margin-bottom:4px;">Ready to explore FUTVault inside Telegram?</h2>
+          <p style="color:var(--text-secondary);font-size:14px;">Launch the native Telegram Mini-App or join our moderated community &amp; verified review hub.</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="https://t.me/FUTVaultExchangeBot" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open @FUTVaultExchangeBot</a>
+          <a href="https://t.me/+rpUpZajyvqE3NGVk" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Join Community</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:10px;">
+      <div class="disclaimer-box">
+        <strong>Independent Platform Notice:</strong> FUTVault is an independent Zero-KYC peer-to-peer escrow and gaming utility platform built for the TON &amp; Telegram ecosystem. FUTVault is not affiliated with, sponsored by, or endorsed by Electronic Arts Inc. (EA Sports), Blizzard Entertainment, or Valve Corporation. All escrow settlements are subject to anti-fraud verification, maturity holds, and the published <a href="/terms/" style="color:#FFFFFF;text-decoration:underline;">Terms of Use</a> and <a href="/privacy/" style="color:#FFFFFF;text-decoration:underline;">Privacy Policy</a>.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>FUTVault</strong> &mdash; Zero-KYC Non-Custodial TON Gaming Escrow
+      </div>
+      <div class="footer-links">
+        <a href="/terms/">Terms of Use</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="https://t.me/FUTVaultExchangeBot" target="_blank" rel="noopener noreferrer">Telegram Bot</a>
+        <a href="https://t.me/FUTVaultExchange" target="_blank" rel="noopener noreferrer">Official Channel</a>
+        <a href="https://t.me/FUTVaultExchangeB2BBot" target="_blank" rel="noopener noreferrer">B2B Partner Bot</a>
+        <!-- TON App directory backlink (update href to exact ton.app/games/... profile URL once published) -->
+        <a href="https://ton.app" target="_blank" rel="noopener noreferrer">Listed on TON App</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

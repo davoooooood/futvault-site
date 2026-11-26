@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="FUTVault Official Bot Description Banner (640x360)">
+  <defs>
+    <radialGradient id="bannerBg" cx="25%" cy="45%" r="80%">
+      <stop offset="0%" stop-color="#112E32"/>
+      <stop offset="55%" stop-color="#091322"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6EE7B7"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="640" height="360" fill="url(#bannerBg)"/>
+  <rect x="10" y="10" width="620" height="340" rx="20" fill="none" stroke="url(#emeraldGrad)" stroke-width="2" stroke-opacity="0.6"/>
+  <rect x="18" y="18" width="604" height="324" rx="16" fill="none" stroke="url(#goldGrad)" stroke-width="1" stroke-opacity="0.38"/>
+
+  <!-- Left Hexagonal Vault Shield Crest & Platform Tag -->
+  <g transform="translate(126, 146)">
+    <circle cx="0" cy="0" r="92" fill="none" stroke="url(#emeraldGrad)" stroke-width="2" stroke-opacity="0.35"/>
+    <polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41" fill="url(#goldGrad)"/>
+    <polygon points="0,-73 63,-36 63,36 0,73 -63,36 -63,-36" fill="#070C16" stroke="url(#emeraldGrad)" stroke-width="3"/>
+    <circle cx="-17" cy="-43" r="3.3" fill="#FBBF24"/>
+    <circle cx="0" cy="-49" r="4.5" fill="#FEF08A"/>
+    <circle cx="17" cy="-43" r="3.3" fill="#FBBF24"/>
+    <path d="M-43 -20 H-4 V-6 H-28 V7 H-8 V20 H-28 V44 H-43 Z" fill="#F8FAFC"/>
+    <path d="M2 -20 H18 L29 22 L40 -20 H56 L36 44 H21 Z" fill="url(#goldGrad)"/>
+    <path d="M-22 53 L0 64 L22 53" fill="none" stroke="#10B981" stroke-width="4.2" stroke-linecap="round"/>
+  </g>
+  <rect x="52" y="250" width="148" height="24" rx="12" fill="#0B1728" stroke="url(#goldGrad)" stroke-width="1.3"/>
+  <text x="126" y="266" text-anchor="middle" fill="#FDE68A" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="800" letter-spacing="1.2">PS • XBOX • PC</text>
+  <text x="126" y="288" text-anchor="middle" fill="#6EE7B7" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="800">5% EA TAX COVERED</text>
+
+  <!-- Right Brand Headline & Full-Capability Overview -->
+  <text x="238" y="48" fill="#FBBF24" font-family="JetBrains Mono, Plus Jakarta Sans, monospace" font-size="12" font-weight="800" letter-spacing="1.6">⚡ SOVEREIGN EA SPORTS FC &amp; GAMING ESCROW</text>
+  <text x="238" y="92" fill="#F8FAFC" font-family="Plus Jakarta Sans, Inter, system-ui, sans-serif" font-size="42" font-weight="900" letter-spacing="2.8">FUTVAULT</text>
+  <text x="238" y="118" fill="#38BDF8" font-family="Plus Jakarta Sans, Inter, system-ui, sans-serif" font-size="13.5" font-weight="800" letter-spacing="0.8">BUY &amp; SELL COINS • OPEN BID • PRIVATE P2P ESCROW</text>
+  <text x="238" y="142" fill="#A7F3D0" font-family="Vazirmatn, Tahoma, sans-serif" font-size="13.5" font-weight="700">خرید و فروش امن سکه • بدون رمز (Open Bid) • معامله خصوصی P2P • تتر و تون</text>
+
+  <!-- 6-Capability Feature Matrix (2 Columns x 3 Rows) -->
+  <g transform="translate(238, 156)">
+    <rect x="0" y="0" width="180" height="36" rx="9" fill="#0B2624" stroke="#10B981" stroke-width="1.7"/>
+    <text x="90" y="23" text-anchor="middle" fill="#6EE7B7" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">🛡️ 100% ANTI-BAN SPLIT</text>
+
+    <rect x="190" y="0" width="180" height="36" rx="9" fill="#0C2233" stroke="#38BDF8" stroke-width="1.7"/>
+    <text x="280" y="23" text-anchor="middle" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">🔑 NO-PASS OPEN BID</text>
+  </g>
+
+  <g transform="translate(238, 200)">
+    <rect x="0" y="0" width="180" height="36" rx="9" fill="#231B0A" stroke="#F59E0B" stroke-width="1.7"/>
+    <text x="90" y="23" text-anchor="middle" fill="#FDE68A" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">🤝 PRIVATE P2P ESCROW</text>
+
+    <rect x="190" y="0" width="180" height="36" rx="9" fill="#0B2624" stroke="#34D399" stroke-width="1.7"/>
+    <text x="280" y="23" text-anchor="middle" fill="#A7F3D0" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">⚡ &lt;15M SELL CASH-OUT</text>
+  </g>
+
+  <g transform="translate(238, 244)">
+    <rect x="0" y="0" width="180" height="36" rx="9" fill="#171E2E" stroke="#FBBF24" stroke-width="1.5"/>
+    <text x="90" y="23" text-anchor="middle" fill="#FEF08A" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">🔒 ZERO-KYC CRYPTO</text>
+
+    <rect x="190" y="0" width="180" height="36" rx="9" fill="#131C31" stroke="#94A3B8" stroke-width="1.5"/>
+    <text x="280" y="23" text-anchor="middle" fill="#E2E8F0" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800">🧮 SBC SOLVER &amp; RADAR</text>
+  </g>
+
+  <!-- Bottom Network & Guarantee Footer -->
+  <rect x="30" y="298" width="580" height="32" rx="9" fill="#091322" stroke="#1E293B" stroke-width="1.4"/>
+  <text x="320" y="319" text-anchor="middle" fill="#BAE6FD" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="800" letter-spacing="1.2">USDT TRC20 • USDT BEP20 • TON CONNECT • 48H BAN-SHIELD • MULTI-GAME</text>
+</svg>

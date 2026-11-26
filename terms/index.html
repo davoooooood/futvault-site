@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#080B11" />
+  <title>FUTVault Terms of Use | Zero-KYC Non-Custodial P2P Escrow</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/futvault-avatar.svg" />
+  <style>
+    :root {
+      --bg-canvas: #080B11;
+      --bg-card: #0F1520;
+      --bg-elevated: #151E2E;
+      --border-subtle: rgba(148, 163, 184, 0.18);
+      --border-emerald: rgba(16, 185, 129, 0.42);
+      --text-primary: #F8FAFC;
+      --text-secondary: #CBD5E1;
+      --text-muted: #94A3B8;
+      --accent-emerald: #10B981;
+      --accent-emerald-soft: rgba(16, 185, 129, 0.14);
+      --accent-gold: #F59E0B;
+      --accent-gold-soft: rgba(245, 158, 11, 0.14);
+      --accent-ton: #38BDF8;
+      --accent-ton-soft: rgba(56, 189, 248, 0.14);
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a {
+      color: var(--accent-emerald);
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.9em;
+      background: var(--bg-elevated);
+      color: #6EE7B7;
+      padding: 2px 6px;
+      border-radius: 6px;
+      border: 1px solid var(--border-subtle);
+      overflow-wrap: anywhere;
+    }
+    .num {
+      font-variant-numeric: tabular-nums;
+      direction: ltr;
+      unicode-bidi: isolate;
+      display: inline-block;
+    }
+    .page-shell {
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 14px 16px 40px;
+    }
+    .topbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      margin-bottom: 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+    }
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      flex: 1 1 200px;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .brand-name {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+    .brand-tag {
+      font-size: 0.78rem;
+      color: var(--accent-emerald);
+      font-weight: 600;
+    }
+    .topbar-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-group, .lang-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-pill, .lang-pill, .btn-primary, .btn-secondary {
+      min-height: 44px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.86rem;
+      font-weight: 700;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-elevated);
+      color: var(--text-secondary);
+      text-decoration: none;
+      white-space: nowrap;
+      max-width: 100%;
+    }
+    .nav-pill:hover, .lang-pill:hover, .btn-secondary:hover {
+      border-color: var(--border-emerald);
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .nav-pill.active, .lang-pill.active {
+      background: var(--accent-emerald-soft);
+      border-color: var(--accent-emerald);
+      color: #6EE7B7;
+    }
+    .btn-primary {
+      background: var(--accent-emerald);
+      border-color: var(--accent-emerald);
+      color: #051B11;
+      font-weight: 800;
+      padding: 8px 14px;
+    }
+    .btn-primary:hover {
+      background: #34D399;
+      text-decoration: none;
+    }
+    .hero-card {
+      background: linear-gradient(160deg, #0F1520 0%, #111D2C 100%);
+      border: 1px solid var(--border-emerald);
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #6EE7B7;
+      background: var(--accent-emerald-soft);
+      border: 1px solid var(--border-emerald);
+      border-radius: 999px;
+      padding: 4px 10px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.45rem, 3.2vw, 2rem);
+      line-height: 1.25;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .hero-lead {
+      margin: 0 0 14px;
+      color: var(--text-secondary);
+      font-size: 0.96rem;
+    }
+    .meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      padding-top: 10px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 195px), 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .fact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 13px 14px;
+      min-width: 0;
+    }
+    .fact-card.ton {
+      border-color: rgba(56, 189, 248, 0.35);
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.08), var(--bg-card));
+    }
+    .fact-card.emerald {
+      border-color: var(--border-emerald);
+      background: linear-gradient(180deg, rgba(16, 185, 129, 0.08), var(--bg-card));
+    }
+    .fact-card.gold {
+      border-color: rgba(245, 158, 11, 0.35);
+      background: linear-gradient(180deg, rgba(245, 158, 11, 0.08), var(--bg-card));
+    }
+    .fact-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .fact-value {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      overflow-wrap: anywhere;
+    }
+    .policy-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 14px;
+      min-width: 0;
+    }
+    .policy-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+      line-height: 1.35;
+      color: var(--text-primary);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 26px;
+      height: 26px;
+      padding: 0 7px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      background: var(--accent-emerald-soft);
+      color: #6EE7B7;
+      border: 1px solid var(--border-emerald);
+      font-variant-numeric: tabular-nums;
+    }
+    .policy-card p {
+      margin: 0 0 10px;
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+      overflow-wrap: anywhere;
+    }
+    .policy-card p:last-child {
+      margin-bottom: 0;
+    }
+    .policy-list {
+      margin: 8px 0 0;
+      padding-inline-start: 20px;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+    .policy-list li {
+      margin-bottom: 7px;
+      overflow-wrap: anywhere;
+    }
+    .policy-list li:last-child {
+      margin-bottom: 0;
+    }
+    .param-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .param-item {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 11px 12px;
+      min-width: 0;
+    }
+    .param-k {
+      font-size: 0.77rem;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+    .param-v {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      overflow-wrap: anywhere;
+    }
+    .callout {
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(245, 158, 11, 0.38);
+      background: var(--accent-gold-soft);
+      color: #FDE68A;
+      font-size: 0.89rem;
+      overflow-wrap: anywhere;
+    }
+    .callout.ton {
+      border-color: rgba(56, 189, 248, 0.38);
+      background: var(--accent-ton-soft);
+      color: #BAE6FD;
+    }
+    .callout.emerald {
+      border-color: var(--border-emerald);
+      background: var(--accent-emerald-soft);
+      color: #A7F3D0;
+    }
+    .footer-card {
+      margin-top: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .footer-note {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      overflow-wrap: anywhere;
+    }
+    @media (max-width: 480px) {
+      .page-shell {
+        padding: 10px 12px 32px;
+      }
+      .topbar, .hero-card, .policy-card, .footer-card {
+        padding: 14px;
+      }
+      .topbar-controls {
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .btn-primary {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="38" height="38" role="img" aria-label="FUTVault Sovereign Crest" data-brand-crest="true"><defs><linearGradient id="fvGold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FDE68A"/><stop offset="50%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#B45309"/></linearGradient><linearGradient id="fvEmerald" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#34D399"/><stop offset="100%" stop-color="#059669"/></linearGradient><radialGradient id="fvCore" cx="50%" cy="35%" r="70%"><stop offset="0%" stop-color="#0F292E"/><stop offset="100%" stop-color="#070B14"/></radialGradient></defs><circle cx="60" cy="60" r="57" fill="#070B14" stroke="url(#fvGold)" stroke-width="2.5"/><polygon points="60,8 105,34 105,86 60,112 15,86 15,34" fill="url(#fvCore)" stroke="url(#fvEmerald)" stroke-width="3.5"/><polygon points="60,15 99,37.5 99,82.5 60,105 21,82.5 21,37.5" fill="none" stroke="url(#fvGold)" stroke-width="1.4" stroke-opacity="0.7"/><circle cx="48" cy="28" r="2.3" fill="#FBBF24"/><circle cx="60" cy="24.5" r="3" fill="#FDE68A"/><circle cx="72" cy="28" r="2.3" fill="#FBBF24"/><path d="M31 42 H56 V51 H41 V59 H53 V68 H41 V82 H31 Z" fill="#F8FAFC"/><path d="M59 42 H69 L76 68 L83 42 H93 L80 82 H72 Z" fill="url(#fvGold)"/><path d="M43 89 L60 97 L77 89" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="brand-text">
+          <span class="brand-name">FUTVault</span>
+          <span class="brand-tag">Zero-KYC Non-Custodial Escrow</span>
+        </div>
+      </div>
+      <div class="topbar-controls">
+        <nav class="nav-group" aria-label="Legal Navigation">
+          <a class="nav-pill active" href="/terms/">Terms of Use</a>
+          <a class="nav-pill" href="/privacy/">Privacy Policy</a>
+        </nav>
+        <div class="lang-group" aria-label="Language Selector">
+          <a class="lang-pill active" href="/terms/">EN</a>
+          <a class="lang-pill" href="/terms/fa/">FA</a>
+          <a class="lang-pill" href="/terms/ar/">AR</a>
+        </div>
+        <a class="btn-primary" href="https://t.me/FUTVaultExchangeBot" target="_blank" rel="noopener noreferrer">Open @FUTVaultExchangeBot</a>
+      </div>
+    </header>
+
+    <main>
+      
+    <section class="hero-card">
+      <span class="eyebrow">No-KYC • Non-Custodial P2P Escrow</span>
+      <h1>FUTVault Terms of Use</h1>
+      <p class="hero-lead">
+        Independent Zero-KYC, non-custodial cryptocurrency P2P escrow and gaming utility coordinator
+        operated exclusively through Telegram (<a href="https://t.me/FUTVaultExchangeBot" target="_blank" rel="noopener noreferrer">@FUTVaultExchangeBot</a>).
+      </p>
+      <div class="meta-strip">
+        <span>Effective Date: <strong class="num">2026-11-26</strong></span>
+        <span>Official Bot: <a href="https://t.me/FUTVaultExchangeBot" target="_blank" rel="noopener noreferrer">@FUTVaultExchangeBot</a></span>
+        <span>Official Channel: <a href="https://t.me/FUTVaultExchange" target="_blank" rel="noopener noreferrer">@FUTVaultExchange</a></span>
+      </div>
+    </section>
+
+    <section class="facts-grid" aria-label="Key Escrow Policy Highlights">
+      <div class="fact-card ton">
+        <div class="fact-label">Primary Crypto Rails</div>
+        <div class="fact-value">TON (USDT Jetton + Memo), USDT TRC20 &amp; BEP20</div>
+      </div>
+      <div class="fact-card emerald">
+        <div class="fact-label">Fulfillment / Refund SLA</div>
+        <div class="fact-value"><span class="num">24h</span> Auto-Refund Guarantee</div>
+      </div>
+      <div class="fact-card gold">
+        <div class="fact-label">Seller Security Bond</div>
+        <div class="fact-value"><span class="num">20%</span> Rolling (Cap <span class="num">$5.00</span>)</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-label">EA FC Default Method</div>
+        <div class="fact-value">Passwordless Open Bid (<span class="num">5%</span> Tax Covered)</div>
+      </div>
+    </section>
+
+    <article class="policy-card">
+      <h2><span class="section-num">1</span> Independent Platform &amp; Publisher Non-Affiliation</h2>
+      <p>
+        FUTVault is an independent Zero-KYC (<code>No-KYC</code>), non-custodial peer-to-peer cryptocurrency
+        escrow and gaming economy coordinator supporting EA Sports FC, World of Warcraft, Diablo IV, and
+        Counter-Strike 2 (CS2). FUTVault does not store user custodial balances, accept fiat identity-gated
+        banking rails, or act as a custodial exchange.
+      </p>
+      <p>
+        FUTVault is <strong>not affiliated with, endorsed by, or sponsored by Electronic Arts Inc. (EA / EA Sports),
+        Blizzard Entertainment, or Valve Corporation (Steam)</strong>. All game publisher rules, transfer-market
+        policies, and account compliance responsibilities rest solely with the participating user.
+      </p>
+    </article>
+
+    <article class="policy-card">
+      <h2><span class="section-num">2</span> Supported Crypto Rails (TON, TRC20, BEP20) &amp; Free Utilities</h2>
+      <p>
+        Payments and seller settlements run on non-custodial blockchain rails verified directly on-chain via
+        watch-only / cold treasury addresses and deterministic invoices:
+      </p>
+      <ul class="policy-list">
+        <li>
+          <strong>TON (The Open Network):</strong> Supports TON Connect and USDT Jetton transfers on TON with
+          mandatory invoice <strong>Memo / comment payload</strong> matching (<span class="num">&gt;= 1</span> confirmation).
+          Missing or altered Memos or non-Jetton native dust transfers cannot auto-confirm an invoice.
+        </li>
+        <li>
+          <strong>USDT TRC20 &amp; USDT BEP20:</strong> Verified on-chain with strict finality thresholds
+          (<span class="num">&gt;= 19</span> confirmations on TRC20; <span class="num">&gt;= 20</span> confirmations on BEP20).
+          Sending assets on the wrong blockchain network or failing to cover exchange withdrawal fees causes
+          irreversible loss and is strictly the sender&apos;s responsibility.
+        </li>
+        <li>
+          <strong>Free Gaming &amp; Escrow Utilities:</strong> Users may access free community tools inside
+          <a href="https://t.me/FUTVaultExchangeBot" target="_blank" rel="noopener noreferrer">@FUTVaultExchangeBot</a>,
+          including <code>/sbc</code> (SBC Squad Rating Solver), <code>/radar</code> (Market Crash &amp; Promo Radar),
+          and <code>/p2p</code> (Bidirectional Private P2P Escrow via signed Telegram Bot invite links).
+        </li>
+      </ul>
+      <div class="callout ton">Active minimum order thresholds: <span class="num">USDT TRC20 min $20.00 | USDT BEP20 min $1.00 | TON min $0.50</span>.</div>
+    </article>
+
+    <article class="policy-card">
+      <h2><span class="section-num">3</span> Passwordless Open Bid, 5% Market Tax &amp; Split-Batch Escrow</h2>
+      <p>
+        FUTVault enforces controlled, verifiable peer-to-peer delivery and verified escrow maturity holds
+        rather than unverified immediate payouts:
+      </p>
+      <ul class="policy-list">
+        <li>
+          <strong>Passwordless Open Bid Default:</strong> EA Sports FC orders default to Passwordless Open Bid
+          (player card auction) so buyers never share EA passwords. Buyers must hold at least
+          <strong class="num">&gt;= 10,000</strong> <strong>liquid EA coins</strong> in-club to purchase and list
+          watermarked transfer cards (<span class="num">70%&ndash;88%</span> dynamic maxPrice range with
+          Commit-Reveal blind card attributes).
+        </li>
+        <li>
+          <strong>100% EA 5% Transfer Tax Coverage:</strong> Gross tranche calculations automatically add the
+          <strong class="num">5%</strong> EA Transfer Market tax (<code>ceil(net / 0.95)</code>) plus estimated card
+          cost so buyers receive 100% of their ordered net coin balance.
+        </li>
+        <li>
+          <strong>Split-Batch (Micro-Tranche) Execution:</strong> Larger orders are divided into controlled
+          micro-tranches to reduce market velocity anomalies and allow step-by-step verification.
+        </li>
+      </ul>
+    </article>
+
+    <article class="policy-card">
+      <h2><span class="section-num">4</span> Live Order SLA, Claim Locks &amp; Network Gas Refund Rules</h2>
+      <p>
+        Operational timers and refund fees are enforced deterministically by live platform policy configuration:
+      </p>
+      <div class="param-grid">
+        <div class="param-item">
+          <div class="param-k">Order Fulfillment / Auto-Refund SLA</div>
+          <div class="param-v num">24 hours</div>
+        </div>
+        <div class="param-item">
+          <div class="param-k">Exclusive Seller Claim Lock</div>
+          <div class="param-v num">20 minutes (+10m report grace)</div>
+        </div>
+        <div class="param-item">
+          <div class="param-k">TON Network Refund Gas Fee</div>
+          <div class="param-v num">$0.05 USDT</div>
+        </div>
+        <div class="param-item">
+          <div class="param-k">USDT BEP20 Refund Gas Fee</div>
+          <div class="param-v num">$0.10 USDT</div>
+        </div>
+        <div class="param-item">
+          <div class="param-k">USDT TRC20 Refund Gas Fee</div>
+          <div class="param-v num">$1.00 USDT</div>
+        </div>
+      </div>
+      <ul class="policy-list">
+        <li>
+          <strong>Seller Claim Timeout &amp; Grace Window:</strong> When a seller locks a tranche, they have
+          <span class="num">20</span> minutes to execute delivery, followed by a
+          <span class="num">10</span>-minute report grace window so an honest Open Bid
+          seller who bought a card near lock expiry can submit proof. Expired unfulfilled claims are revoked and
+          reassigned automatically.
+        </li>
+        <li>
+          <strong>Deferred Cancellation During Active Claim:</strong> While a seller holds an active claim lock
+          (or report grace window), unilateral buyer cancellation is deferred; if the seller releases, reports card
+          not found, or times out without delivery, the refund executes automatically.
+        </li>
+        <li>
+          <strong>Auto-Refund Minus Network Gas:</strong> If a funded order remains unfulfilled past
+          <span class="num">24</span> hours (and is not extended by the buyer) or is validly cancelled, the
+          remaining principal is refunded to the buyer&apos;s wallet minus only the configured blockchain gas fee above.
+        </li>
+      </ul>
+    </article>
+
+    <article class="policy-card">
+      <h2><span class="section-num">5</span> Seller Security Bonds &amp; Payout Maturity Holds</h2>
+      <p>
+        Sellers must satisfy collateral, retention, and maturity safeguards designed to neutralize exit scams,
+        trade reversals, and coin-wipe fraud:
+      </p>
+      <div class="param-grid">
+        <div class="param-item">
+          <div class="param-k">Rolling Seller Security Bond</div>
+          <div class="param-v num">20% holdback up to $5.00 USDT</div>
+        </div>
+        <div class="param-item">
+          <div class="param-k">Unbonded Seller Maturity Hold</div>
+          <div class="param-v num">30 minutes</div>
+        </div>
+        <div class="param-item">
+          <div class="param-k">New-Seller Anti-Wipe Hold</div>
+          <div class="param-v num">48 hours</div>
+        </div>
+        <div class="param-item">
+          <div class="param-k">CS2 Steam Trade Protection Hold</div>
+          <div class="param-v num">174 hours (7d + 6h)</div>
+        </div>
+      </div>
+      <ul class="policy-list">
+        <li>
+          <strong>Rolling Bond &amp; Collateral Caps:</strong> Unless 100% cash-collateralized or covered by verified
+          supply pledges, sellers accrue a <span class="num">20%</span> progressive bond
+          holdback up to <span class="num">$5.00 USDT</span>, with tranche limits scaling
+          linearly with bonded collateral. When Market Observers are offline, full collateral protection applies.
+        </li>
+        <li>
+          <strong>Won Items Retention Rule (EA FC):</strong> Sellers must never Quick-Sell or submit a bought
+          transfer card into an SBC before the verification window closes so any Proof-of-Possession Re-List Challenge
+          (<code>ownersCount + 1</code>) can verify ownership.
+        </li>
+        <li>
+          <strong>Maturity Windows &amp; CS2 Trade Reversal:</strong> Unbonded payouts mature after
+          <span class="num">30</span> minutes; new sellers (&lt; 3 completed tranches or
+          exceeding daily bonded limits) are subject to a <span class="num">48</span>-hour
+          anti-wipe hold; Counter-Strike 2 (CS2) seller payouts remain held for
+          <span class="num">174</span> hours to cover Steam&apos;s 7-day Trade Protection window.
+          Reversing a Steam trade forfeits 100% of seller bonds, refunds the buyer, and permanently bans the seller;
+          buyers must report any CS2 trade reversal before the <span class="num">174</span>-hour
+          window ends.
+        </li>
+        <li>
+          <strong>WoW, Diablo IV &amp; Buyer Anti-Abuse Compensation:</strong> World of Warcraft in-game mail
+          carries Blizzard&apos;s ~60-minute delay and 30-day unclaimed return rule; Diablo IV in-game face-to-face
+          trade confirmation is final and irreversible once accepted. Non-EA deliveries require
+          <code>FV-XXXX</code> mobile screen-recording verification prior to automated release. Confirmed buyer
+          phantom listings or self-sniping deduct <span class="num">$0.50 USDT</span> wasted-lock compensation from
+          buyer refunds to credit affected honest sellers.
+        </li>
+      </ul>
+    </article>
+
+    <article class="policy-card">
+      <h2><span class="section-num">6</span> Escrow Arbitration &amp; Symmetric Buyer Dispute Bond</h2>
+      <p>
+        Disputes are evaluated using live Market Observer auction telemetry, cryptographic Re-List Challenges,
+        coin-delta audit snapshots, and challenge-coded <code>FV-XXXX</code> screen-recording verification.
+      </p>
+      <p>
+        To prevent false refund framing, opening a contested buyer dispute carries a symmetric refundable
+        <strong class="num">$1.50 USDT</strong> Buyer Dispute Bond. This dispute bond
+        is <strong>automatically waived on a clean buyer&apos;s first dispute against an unbonded,
+        under-collateralized, or unverified seller</strong> (and whenever Market Observers verify an active or
+        expired-unsold listing). Valid disputes return 100% of the dispute bond alongside the refund; repeated false
+        disputes forfeit the bond and permanently blacklist the offender.
+      </p>
+    </article>
+
+    <article class="policy-card">
+      <h2><span class="section-num">7</span> Binding Acceptance &amp; Support</h2>
+      <p>
+        Submitting an order, depositing crypto to an invoice, claiming a seller ticket, or creating a Private P2P
+        escrow link through <a href="https://t.me/FUTVaultExchangeBot" target="_blank" rel="noopener noreferrer">@FUTVaultExchangeBot</a>
+        constitutes binding acceptance of these Terms of Use and our <a href="/privacy/">Privacy Policy</a>.
+        For dispute assistance, refund inquiries, or compliance questions, run <code>/support</code> inside
+        <a href="https://t.me/FUTVaultExchangeBot" target="_blank" rel="noopener noreferrer">@FUTVaultExchangeBot</a>.
+      </p>
+    </article>
+  
+    </main>
+
+    <footer class="footer-card">
+      <div class="footer-links">
+        <a class="btn-secondary" href="/terms/">Terms of Use</a>
+        <a class="btn-secondary" href="/privacy/">Privacy Policy</a>
+        <a class="btn-secondary" href="https://t.me/FUTVaultExchangeBot" target="_blank" rel="noopener noreferrer">Support via /support</a>
+        <a class="btn-secondary" href="https://t.me/FUTVaultExchange" target="_blank" rel="noopener noreferrer">@FUTVaultExchange</a>
+      </div>
+      <p class="footer-note">FUTVault is an independent Zero-KYC P2P escrow coordinator with no affiliation to Electronic Arts (EA Sports), Blizzard Entertainment, or Valve (Steam).</p>
+    </footer>
+  </div>
+</body>
+</html>
